@@ -90,9 +90,9 @@ namespace Parth.Models
                 new Overview { EmployeeId = 6 , HardwareId = 7 , SoftwareId= 4, DepartmentId = 1 },
             };
 
-            foreach (var temp in department)
+            foreach (var temp in overview)
             {
-                context.Departments.Add(temp);
+                context.Overviews.Add(temp);
             }
 
             context.SaveChanges();

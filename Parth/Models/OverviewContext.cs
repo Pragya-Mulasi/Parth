@@ -19,6 +19,6 @@ namespace Parth.Models
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
 
-
+        public System.Data.Entity.DbSet<Parth.Models.Overview> Overviews { get; set; }
     }
 } 

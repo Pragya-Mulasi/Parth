@@ -11,5 +11,8 @@ namespace Parth.Models
         public string Model { get; set; }
         public string OS { get; set; }
         public string Company { get; set; }
+
+        public virtual Employee employee { get; set; }
+        public virtual ICollection<Software> Softwares { get; set; }
     }
 }

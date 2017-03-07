@@ -9,5 +9,7 @@ namespace Parth.Models
     {
         public int EmployeeId { get; set; }
         public string EmployeeName { get; set; }
+
+        public virtual ICollection<Hardware> Hardwares { get; set; }
     }
 }

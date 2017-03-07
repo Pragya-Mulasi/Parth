@@ -7,10 +7,11 @@ namespace Parth.Models
 {
     public class Overview
     {
-        virtual public Employee employee { get; set; }
-        virtual public Hardware hardware { get; set; }
-        virtual public Software software { get; set; }
-        virtual public Department department { get; set; }
+        public int OverviewId { get; set; }
+        public virtual Employee employee { get; set; }
+        public virtual Hardware hardware { get; set; }
+        public virtual Software software { get; set; }
+        public virtual Department department { get; set; }
         public int EmployeeId { get; set; }
         public int HardwareId { get; set; }
         public int SoftwareId { get; set; }
