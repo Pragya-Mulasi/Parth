@@ -10,6 +10,7 @@ namespace Parth.Models
         public int DepartmentId { get; set; }
         public string DepartmenteName { get; set; }
         public int ManagedId { get; set; }
-        virtual public Employee employee { get; set; }
+
+        public virtual ICollection<Employee> Employees { get; set; }
     }
 }

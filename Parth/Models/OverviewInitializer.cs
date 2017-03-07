@@ -10,41 +10,6 @@ namespace Parth.Models
     {
         protected override void Seed(OverviewContext context)
         {
-            var employee = new List<Employee>
-            {
-                new Employee { EmployeeName  = "Ross Geller" },
-                new Employee { EmployeeName  = "Monica Geller" },
-                new Employee { EmployeeName  = "Chandler Bing" },
-                new Employee { EmployeeName  = "Joe T" },
-                new Employee { EmployeeName  = "Ursala B." },
-                new Employee { EmployeeName  = "Pheebe B." },
-            };
-
-            foreach (var temp in employee)
-            {
-                context.Employees.Add(temp);
-            }
-
-            context.SaveChanges();
-
-            //Seed Data for Hardware
-
-            var hardware = new List<Hardware>
-            {
-                new Hardware { Model = "Laptop"  , OS= "Windows 7", Company= "Dell" },
-                new Hardware { Model = "Desktop"  , OS= "Windows 7", Company= "HP" },
-                new Hardware { Model = "Desktop"  , OS= "Windows 10", Company= "Dell" },
-                new Hardware { Model = "Laptop"  , OS= "Windows 10", Company= "HP" },
-                new Hardware { Model = "Desktop"  , OS= "Windows 7", Company= "HP" },
-                new Hardware { Model = "Desktop"  , OS= "Windows 10", Company= "Dell" },
-                new Hardware { Model = "Laptop"  , OS= "Windows 10", Company= "HP" },
-            };
-
-            foreach (var temp in hardware)
-            {
-                context.Hardwares.Add(temp);
-            }
-
             //Seed Data for Software
 
             var software = new List<Software>
@@ -66,8 +31,8 @@ namespace Parth.Models
 
             var department = new List<Department>
             {
-                new Department { DepartmenteName="CIS" , ManagedId = 2 },
-                new Department { DepartmenteName="IMS" , ManagedId = 1 },
+                new Department { DepartmenteName="CIS" , ManagedId = 1 },
+                new Department { DepartmenteName="IMS" , ManagedId = 2 },
             };
 
             foreach (var temp in department)
@@ -77,25 +42,62 @@ namespace Parth.Models
 
             context.SaveChanges();
 
-            //Seed Data for Overview
+            //Seed Data for Employee
 
-            var overview = new List<Overview>
+            var employee = new List<Employee>
             {
-                new Overview { EmployeeId = 1 , HardwareId = 1 , SoftwareId= 1, DepartmentId = 1 },
-                new Overview { EmployeeId = 1 , HardwareId = 2 , SoftwareId= 2, DepartmentId = 1 },
-                new Overview { EmployeeId = 2 , HardwareId = 3 , SoftwareId= 1, DepartmentId = 2 },
-                new Overview { EmployeeId = 3 , HardwareId = 4 , SoftwareId= 2, DepartmentId = 2 },
-                new Overview { EmployeeId = 4 , HardwareId = 5 , SoftwareId= 3, DepartmentId = 1 },
-                new Overview { EmployeeId = 5 , HardwareId = 6 , SoftwareId= 3, DepartmentId = 2 },
-                new Overview { EmployeeId = 6 , HardwareId = 7 , SoftwareId= 4, DepartmentId = 1 },
+                new Employee { EmployeeName  = "Ross Geller"  , DepartmentId = 1},
+                new Employee { EmployeeName  = "Monica Geller"  , DepartmentId= 2},
+                new Employee { EmployeeName  = "Chandler Bing"  , DepartmentId= 1},
+                new Employee { EmployeeName  = "Joe T"  , DepartmentId= 1},
+                new Employee { EmployeeName  = "Ursala B." , DepartmentId= 2},
+                new Employee { EmployeeName  = "Pheebe B."  , DepartmentId= 1},
             };
 
-            foreach (var temp in overview)
+            foreach (var temp in employee)
             {
-                context.Overviews.Add(temp);
+                context.Employees.Add(temp);
             }
 
             context.SaveChanges();
+
+            //Seed Data for Hardware
+
+            var hardware = new List<Hardware>
+            {
+                new Hardware { Model = "Laptop"  , OS= "Windows 7", Company= "Dell" , EmployeeId = 1 },
+                new Hardware { Model = "Desktop"  , OS= "Windows 7", Company= "HP" , EmployeeId = 1},
+                new Hardware { Model = "Desktop"  , OS= "Windows 10", Company= "Dell" , EmployeeId = 2},
+                new Hardware { Model = "Laptop"  , OS= "Windows 10", Company= "HP" , EmployeeId = 3},
+                new Hardware { Model = "Desktop"  , OS= "Windows 7", Company= "HP" , EmployeeId = 4},
+                new Hardware { Model = "Desktop"  , OS= "Windows 10", Company= "Dell" , EmployeeId = 5},
+                new Hardware { Model = "Laptop"  , OS= "Windows 10", Company= "HP" , EmployeeId = 6 },
+            };
+
+            foreach (var temp in hardware)
+            {
+                context.Hardwares.Add(temp);
+            }
+
+            ////Seed Data for Overview
+
+            //var overview = new List<Overview>
+            //{
+            //    new Overview { EmployeeId = 1 , HardwareId = 1 , SoftwareId= 1, DepartmentId = 1 },
+            //    new Overview { EmployeeId = 1 , HardwareId = 2 , SoftwareId= 2, DepartmentId = 1 },
+            //    new Overview { EmployeeId = 2 , HardwareId = 3 , SoftwareId= 1, DepartmentId = 2 },
+            //    new Overview { EmployeeId = 3 , HardwareId = 4 , SoftwareId= 2, DepartmentId = 2 },
+            //    new Overview { EmployeeId = 4 , HardwareId = 5 , SoftwareId= 3, DepartmentId = 1 },
+            //    new Overview { EmployeeId = 5 , HardwareId = 6 , SoftwareId= 3, DepartmentId = 2 },
+            //    new Overview { EmployeeId = 6 , HardwareId = 7 , SoftwareId= 4, DepartmentId = 1 },
+            //};
+
+            //foreach (var temp in overview)
+            //{
+            //    context.Overviews.Add(temp);
+            //}
+
+            //context.SaveChanges();
         }
     }
 }
