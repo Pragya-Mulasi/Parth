@@ -12,6 +12,6 @@ namespace Parth.Models
         public string Version { get; set; }
         public string Vendor { get; set; }
 
-        public virtual ICollection<Hardware> Hardwares { get; set; }
+        public virtual ICollection<Asset> Assets { get; set; }
     }
 }

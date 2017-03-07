@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Parth.Models.Asset>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HardwareId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hardware.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hardware.OS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hardware.Company)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.software.SoftwareName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.software.Version)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.software.Vendor)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.HardwareId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hardware.Model)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hardware.OS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hardware.Company)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.software.SoftwareName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.software.Version)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.software.Vendor)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AssetId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AssetId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AssetId })
+        </td>
+    </tr>
+}
+
+</table>

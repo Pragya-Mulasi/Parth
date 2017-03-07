@@ -17,6 +17,6 @@ namespace Parth.Models
         public int EmployeeId { get; set; }
         public virtual Employee employee { get; set; }
 
-        public virtual ICollection<Software> Softwares { get; set; }
+        public virtual ICollection<Asset> Assets { get; set; }
     }
 }

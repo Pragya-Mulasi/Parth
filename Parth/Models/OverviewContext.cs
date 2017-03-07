@@ -13,12 +13,11 @@ namespace Parth.Models
         public DbSet<Hardware> Hardwares { get; set; }
         public DbSet<Software> Softwares { get; set; }
         public DbSet<Department> Departments { get; set; }
+        public DbSet<Asset> Assets { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
-
-      //  public System.Data.Entity.DbSet<Parth.Models.Overview> Overviews { get; set; }
     }
 } 
