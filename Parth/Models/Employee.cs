@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -8,11 +9,13 @@ namespace Parth.Models
 {
     public class Employee
     {
-        //PrimaryKey
+        [Key]
         public int EmployeeId { get; set; }
+        [Required][Display(Name = "Employee Name")]
         public string EmployeeName { get; set; }
 
-        //ForeignKey
+        //ForeignKey 
+        [Required]
         public int DepartmentId { get; set; }
         public virtual Department Department { get; set; }
 
