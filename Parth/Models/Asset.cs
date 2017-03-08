@@ -19,5 +19,9 @@ namespace Parth.Models
         public int SoftwareId { get; set; }        
         public virtual Software software { get; set; }
 
+        //ForeignKey
+        public int EmployeeId { get; set; }
+        public virtual Employee employee { get; set; }
+
     }
 }

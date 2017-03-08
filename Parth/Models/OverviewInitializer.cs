@@ -61,13 +61,13 @@ namespace Parth.Models
             //Seed Data for Hardware
             var hardware = new List<Hardware>
             {
-                new Hardware { Model = "Laptop"  , OS= "Windows 7", Company= "Dell" , EmployeeId = 1 },
-                new Hardware { Model = "Desktop"  , OS= "Windows 7", Company= "HP" , EmployeeId = 1},
-                new Hardware { Model = "Desktop"  , OS= "Windows 10", Company= "Dell" , EmployeeId = 2},
-                new Hardware { Model = "Laptop"  , OS= "Windows 10", Company= "HP" , EmployeeId = 3},
-                new Hardware { Model = "Desktop"  , OS= "Windows 7", Company= "HP" , EmployeeId = 4},
-                new Hardware { Model = "Desktop"  , OS= "Windows 10", Company= "Dell" , EmployeeId = 5},
-                new Hardware { Model = "Laptop"  , OS= "Windows 10", Company= "HP" , EmployeeId = 6 },
+                new Hardware { Model = "Laptop"  , OS= "Windows 7", Company= "Dell"  },
+                new Hardware { Model = "Desktop"  , OS= "Windows 7", Company= "HP" },
+                new Hardware { Model = "Desktop"  , OS= "Windows 10", Company= "Dell" } ,
+                new Hardware { Model = "Laptop"  , OS= "Windows 10", Company= "HP" },
+                new Hardware { Model = "Desktop"  , OS= "Windows 7", Company= "HP" },
+                new Hardware { Model = "Desktop"  , OS= "Windows 10", Company= "Dell" },
+                new Hardware { Model = "Laptop"  , OS= "Windows 10", Company= "HP" },
             };
 
             foreach (var temp in hardware)
@@ -79,14 +79,14 @@ namespace Parth.Models
             //Seed Data for Asset
             var asset = new List<Asset>
             {
-                new Asset{ HardwareId = 1 , SoftwareId = 1},
-                new Asset{ HardwareId = 1 , SoftwareId = 2},
-                new Asset{ HardwareId = 2 , SoftwareId = 3},
-                new Asset{ HardwareId = 3 , SoftwareId = 4},
-                new Asset{ HardwareId = 4 , SoftwareId = 1},
-                new Asset{ HardwareId = 5 , SoftwareId = 2},
-                new Asset{ HardwareId = 6 , SoftwareId = 3},
-                new Asset{ HardwareId = 7 , SoftwareId = 4},
+                new Asset{ HardwareId = 1 , SoftwareId = 1 , EmployeeId = 1},
+                new Asset{ HardwareId = 1 , SoftwareId = 2 , EmployeeId = 1},
+                new Asset{ HardwareId = 2 , SoftwareId = 3, EmployeeId = 1},
+                new Asset{ HardwareId = 3 , SoftwareId = 4, EmployeeId = 2},
+                new Asset{ HardwareId = 4 , SoftwareId = 1, EmployeeId = 3},
+                new Asset{ HardwareId = 5 , SoftwareId = 2, EmployeeId = 4},
+                new Asset{ HardwareId = 6 , SoftwareId = 3, EmployeeId = 5},
+                new Asset{ HardwareId = 7 , SoftwareId = 4, EmployeeId = 6},
             };
 
             foreach (var temp in asset)

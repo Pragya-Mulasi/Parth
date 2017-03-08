@@ -10,6 +10,14 @@
     <h4>Employee</h4>
     <hr />
     <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeId)
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.EmployeeName)
         </dt>
@@ -19,6 +27,68 @@
 
     </dl>
 </div>
+
+<table class="table">
+    <tr>
+        <th>
+            Hardware Id
+        </th>
+        <th>
+            Hardware Model
+        </th>
+        <th>
+            Operating System
+        </th>
+        <th>
+            Hardware Company
+        </th>
+        <th>
+            Software Id
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Version
+        </th>
+        <th>
+            Vendor
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Assets)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HardwareId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hardware.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hardware.OS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hardware.Company)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoftwareId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.software.SoftwareName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.software.Version)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.software.Vendor)
+            </td>
+        </tr>
+    }
+
+</table>
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.EmployeeId }) |
     @Html.ActionLink("Back to List", "Index")

@@ -28,6 +28,7 @@ namespace Parth.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Employee employee = db.Employees.Find(id);
+         
             if (employee == null)
             {
                 return HttpNotFound();

@@ -13,10 +13,6 @@ namespace Parth.Models
         public string OS { get; set; }
         public string Company { get; set; }
 
-        //ForeignKey
-        public int EmployeeId { get; set; }
-        public virtual Employee employee { get; set; }
-
         public virtual ICollection<Asset> Assets { get; set; }
     }
 }
