@@ -14,6 +14,18 @@ namespace Parth.Controllers
     {
         private OverviewContext db = new OverviewContext();
 
+        //GET:Serach Asset
+        public ActionResult Search(string SearchBox)
+        {
+            var assets = (from s in db.Assets
+                         where s.hardware.Company.Contains(SearchBox)
+                         || s.software.SoftwareName.Contains(SearchBox)
+                         || s.hardware.HardwareId.Equals(SearchBox)
+                          select s).ToList();
+            return View("Index" , assets);
+        }
+
+
         // GET: Assets
         public ActionResult Index()
         {

@@ -25,7 +25,6 @@ namespace Parth
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/bootstrapUpdate.css",
                       "~/Content/site.css"));
         }
     }

@@ -36,6 +36,44 @@
 
     </dl>
 </div>
+
+<table class="table">
+    <tr>
+        <th>
+            HardwareId
+        </th>
+        <th>
+            Model
+        </th>
+        <th>
+            Operating System
+        </th>
+        <th>
+            Company
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Assets)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HardwareId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hardware.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hardware.OS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hardware.Company)
+            </td>
+        </tr>
+    }
+
+</table>
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.SoftwareId }) |
     @Html.ActionLink("Back to List", "Index")

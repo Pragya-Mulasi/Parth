@@ -13,7 +13,6 @@
         <dt>
             @Html.DisplayNameFor(model => model.Model)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Model)
         </dd>
@@ -21,7 +20,6 @@
         <dt>
             @Html.DisplayNameFor(model => model.OS)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.OS)
         </dd>
@@ -29,13 +27,52 @@
         <dt>
             @Html.DisplayNameFor(model => model.Company)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Company)
         </dd>
 
-    </dl>
+   </dl>
 </div>
+
+<table class="table">
+    <tr>
+        <th>
+            Software Id
+        </th>
+        <th>
+            Software Name
+        </th>
+        <th>
+            Version
+        </th>
+        <th>
+            Vendor
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Assets)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoftwareId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.software.SoftwareName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.software.Version)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.software.Vendor)
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.HardwareId }) |
     @Html.ActionLink("Back to List", "Index")
