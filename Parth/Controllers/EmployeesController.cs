@@ -14,6 +14,18 @@ namespace Parth.Controllers
     {
         private OverviewContext db = new OverviewContext();
 
+        //GET:Search
+        public ActionResult Search(string SearchBox)
+        {
+            var employee = (from emp in db.Employees where
+                           emp.EmployeeId.ToString().Contains(SearchBox)
+                           || emp.EmployeeName.Contains(SearchBox)
+                           select emp).ToList();
+
+            return View("Index" , employee);
+        }
+
+
         // GET: Employees
         public ActionResult Index()
         {
