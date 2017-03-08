@@ -80,7 +80,7 @@ namespace Parth.Models
             var asset = new List<Asset>
             {
                 new Asset{ HardwareId = 1 , SoftwareId = 1},
-                new Asset{ HardwareId = 1 , SoftwareId = 2 },
+                new Asset{ HardwareId = 1 , SoftwareId = 2},
                 new Asset{ HardwareId = 2 , SoftwareId = 3},
                 new Asset{ HardwareId = 3 , SoftwareId = 4},
                 new Asset{ HardwareId = 4 , SoftwareId = 1},

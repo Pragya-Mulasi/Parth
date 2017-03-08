@@ -18,5 +18,6 @@ namespace Parth.Models
         //Software
         public int SoftwareId { get; set; }        
         public virtual Software software { get; set; }
+
     }
 }

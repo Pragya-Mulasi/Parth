@@ -11,67 +11,59 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.HardwareId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HardwareId)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.hardware.Model)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.hardware.Model)
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.hardware.OS)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.hardware.OS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hardware.Company)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.hardware.Company)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.software.SoftwareId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.software.SoftwareId)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.software.SoftwareName)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.software.SoftwareName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Model)
+            @Html.DisplayNameFor(model => model.software.Version)
         </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.Model)
+            @Html.DisplayFor(model => model.software.Version)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.OS)
+            @Html.DisplayNameFor(model => model.software.Vendor)
         </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.OS)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Company)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Company)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SoftwareName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SoftwareName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Version)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Version)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Vendor)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Vendor)
+            @Html.DisplayFor(model => model.software.Vendor)
         </dd>
 
     </dl>

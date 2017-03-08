@@ -9,16 +9,6 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-
-
-@using (Html.BeginForm("Search" , "Assets"))
-{
-    @Html.Editor("SearchBox")
-    <input type="button" value="Search" />
-}
-
-<br />
-
 <table class="table">
     <tr>
         <th>
@@ -32,6 +22,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.hardware.Company)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoftwareId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.software.SoftwareName)
@@ -58,6 +51,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.hardware.Company)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoftwareId)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.software.SoftwareName)

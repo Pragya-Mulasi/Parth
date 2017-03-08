@@ -16,6 +16,6 @@ namespace Parth.Models
         public int DepartmentId { get; set; }
         public virtual Department Department { get; set; }
 
-        public virtual ICollection<Hardware> Hardwares { get; set; }
+        public virtual ICollection<Asset> Assets { get; set; }
     }
 }

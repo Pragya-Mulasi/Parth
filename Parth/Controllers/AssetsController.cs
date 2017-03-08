@@ -14,18 +14,6 @@ namespace Parth.Controllers
     {
         private OverviewContext db = new OverviewContext();
 
-        //GET:Serach Asset
-        public ActionResult Search(string SearchBox)
-        {
-            var assets = (from s in db.Assets
-                         where s.hardware.Company.Contains(SearchBox)
-                         || s.software.SoftwareName.Contains(SearchBox)
-                         || s.hardware.HardwareId.Equals(SearchBox)
-                          select s).ToList();
-            return View("Index" , assets);
-        }
-
-
         // GET: Assets
         public ActionResult Index()
         {
@@ -61,7 +49,7 @@ namespace Parth.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AssetId,HardwareId,Model,OS,Company,SoftwareId,SoftwareName,Version,Vendor")] Asset asset)
+        public ActionResult Create([Bind(Include = "AssetId,HardwareId,SoftwareId")] Asset asset)
         {
             if (ModelState.IsValid)
             {
@@ -97,7 +85,7 @@ namespace Parth.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AssetId,HardwareId,Model,OS,Company,SoftwareId,SoftwareName,Version,Vendor")] Asset asset)
+        public ActionResult Edit([Bind(Include = "AssetId,HardwareId,SoftwareId")] Asset asset)
         {
             if (ModelState.IsValid)
             {
